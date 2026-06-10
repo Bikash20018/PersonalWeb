@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    // auto-updating copyright year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -11,8 +15,18 @@ $(document).ready(function () {
 
         if (window.scrollY > 60) {
             document.querySelector('#scroll-top').classList.add('active');
+            document.querySelector('header').classList.add('scrolled');
         } else {
             document.querySelector('#scroll-top').classList.remove('active');
+            document.querySelector('header').classList.remove('scrolled');
+        }
+
+        // scroll progress indicator
+        const progress = document.getElementById('scroll-progress');
+        if (progress) {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+            progress.style.width = pct + '%';
         }
 
         // scroll spy
@@ -29,12 +43,15 @@ $(document).ready(function () {
         });
     });
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
+    // smooth scrolling (offset for the fixed header so headings aren't hidden under it)
+    $('a[href^="#"]').on('click', function (e) {
+        const hash = $(this).attr('href');
+        if (hash === '#' || $(hash).length === 0) return;
         e.preventDefault();
+        const headerHeight = $('header').outerHeight() || 0;
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+            scrollTop: $(hash).offset().top - headerHeight + 2,
+        }, 700, 'swing');
     });
 
     // <!-- emailjs to mail contact form data -->
@@ -59,8 +76,8 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Jigar Sable";
-            $("#favicon").attr("href", "assets/images/favicon.png");
+            document.title = "Portfolio | Bikash Chhetri";
+            $("#favicon").attr("href", "assets/images/favicons.png");
         }
         else {
             document.title = "Come Back To Portfolio";
@@ -79,12 +96,8 @@ var typed = new Typed(".typing-text", {
 });
 // <!-- typed js effect ends -->
 
-async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
+async function fetchData() {
+    const response = await fetch("skills.json");
     const data = await response.json();
     return data;
 }
@@ -96,7 +109,7 @@ function showSkills(skills) {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src="${skill.icon}" alt="${skill.name}" loading="lazy" decoding="async" />
                 <span>${skill.name}</span>
               </div>
             </div>`
@@ -104,54 +117,8 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
-function showProjects(projects) {
-    let projectsContainer = document.querySelector("#work .box-container");
-    let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
-        projectHTML += `
-        <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectHTML;
-
-    // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .box', { interval: 200 });
-
-}
-
 fetchData().then(data => {
     showSkills(data);
-});
-
-fetchData("projects").then(data => {
-    showProjects(data);
 });
 
 // <!-- tilt js effect starts -->
@@ -238,9 +205,6 @@ srtop.reveal('.skills .container .bar', { delay: 400 });
 
 /* SCROLL EDUCATION */
 srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
 srtop.reveal('.experience .timeline', { delay: 400 });

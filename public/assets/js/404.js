@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+    // auto-updating copyright year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     $('#menu').click(function(){
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');

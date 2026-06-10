@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Bikash Chhetri, portfolio, Bikash, BikashChhetri, personal portfolio Bikash Chhetri, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Bikash's Portfolio. Full-Stack Web Developer and Android App Developer" />
+    <meta name="author" content="Bikash Chhetri" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#02094b" />
+    <meta name="keywords" content="Bikash Chhetri, portfolio, Bikash, BikashChhetri, personal portfolio Bikash Chhetri, portfolio design, portfolio website, personal portfolio, full stack developer, MERN developer, android developer Nepal" />
+    <meta name="description" content="Bikash Chhetri — Full-Stack (MERN) Web Developer and Android App Developer. Explore my projects, skills, experience and get in touch." />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bikash Chhetri | Full-Stack Web & Android Developer" />
+    <meta property="og:description" content="Full-Stack (MERN) Web Developer and Android App Developer. Explore my projects, skills and experience." />
+    <meta property="og:image" content="./assets/images/heros.png" />
+    <meta property="og:url" content="https://bikash20.com.np/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bikash Chhetri | Full-Stack Web & Android Developer" />
+    <meta name="twitter:description" content="Full-Stack (MERN) Web Developer and Android App Developer." />
+    <meta name="twitter:image" content="./assets/images/heros.png" />
+
+    <!-- Preconnect to font/CDN hosts for faster, smoother loads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Premium dark · glass theme (overrides) -->
+    <link rel="stylesheet" href="./assets/css/theme.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
@@ -15,6 +37,9 @@
     <title>Portfolio | Bikash Chhetri</title>
 </head>
 <body oncontextmenu="return false">
+
+<!-- scroll progress indicator -->
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- pre loader -->
 <!-- <div class="loader-container">
@@ -32,7 +57,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
             </ul>
@@ -95,7 +119,7 @@
               <p><span> phone : </span> +977 9847088027</p>
             </div> -->
             <div class="box">
-              <p><span> email : </span> bikash.chhetri20790328@gmail.com</p>
+              <p><span> email : </span> chhetri@bikash20.com.np</p>
               <p><span> place : </span> Kanchan - 04, Rudrapur, Rupandehi</p>
             </div>
         </div>
@@ -144,7 +168,7 @@
 
     <div class="box">
       <div class="image">
-      <img draggable="false" src="./assets/images/educat/tu.jpg" alt="">
+      <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/tu.jpg" alt="">
       </div>
       <div class="content">
       <h3>Master in Business Studies | Marketing </h3>
@@ -156,7 +180,7 @@
 
     <div class="box">
         <div class="image">
-        <img draggable="false" src="./assets/images/educat/c.jpg" alt="">
+        <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/c.jpg" alt="">
         </div>
         <div class="content">
         <h3>Bachelor in Computer Science and Engineering</h3>
@@ -167,7 +191,7 @@
 
     <div class="box">
       <div class="image">
-      <img draggable="false" src="./assets/images/educat/s.jpg" alt="">
+      <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/s.jpg" alt="">
       </div>
       <div class="content">
       <h3>+2 Science | Optional Math </h3>
@@ -180,7 +204,7 @@
 
     <div class="box">
         <div class="image">
-        <img draggable="false" src="./assets/images/educat/b.jpg" alt="">
+        <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/b.jpg" alt="">
         </div>
         <div class="content">
         <h3>10th Optional Math</h3>
@@ -195,40 +219,6 @@
 </section>
 <!-- education section ends -->
 
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/portfolio1.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/Bikash20018/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-</div>
-
-<div class="viewall">
-  <a href="/projects" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-
-</section>
-<!-- work project section ends -->
 
 <!-- experience section starts -->
 <section class="experience" id="experience">
@@ -337,19 +327,19 @@
       
       <div class="form-group">
         <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Name" aria-label="Your name" autocomplete="name" required>
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" aria-label="Your email address" autocomplete="email" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
+          <input type="tel" name="phone" placeholder="Phone" aria-label="Your phone number" autocomplete="tel">
           <i class='fas fa-phone-alt'></i>
         </div>
         <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
+        <textarea placeholder="Message" name="message" aria-label="Your message" required></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
         </div>
@@ -380,27 +370,26 @@
           <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
           <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
           <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
           <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
       </div>
 
       <div class="box">
           <h3>contact info</h3>
           <p> <i class="fas fa-phone"></i>+977 9847088027</p>
-          <p> <i class="fas fa-envelope"></i>Bikash.chhetri20790328@gmail.com</p>
+          <p> <i class="fas fa-envelope"></i>chhetri@bikash20.com.np</p>
           <p> <i class="fas fa-map-marked-alt"></i>Kanchan -4, Rudrapur, Rupandehi</p>
           <div class="share">
 
               <a href="https://www.linkedin.com/in/bikashchhetri2020" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
               <a href="https://github.com/Bikash20018" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:bikash.chhetri20790328@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+              <a href="mailto:chhetri@bikash20.com.np" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
               <a href="https://x.com/BChhetri23304" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
               <a href="https://dev.to/bikash_chhetri_dff8bd4b38" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
           </div>
       </div>
   </div>
 
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/bikashchhetri2020"> Bikash Chhetri</h1>
+  <h1 class="credit">&copy; <span id="year"></span> Bikash Chhetri &middot; Crafted with <i class="fa fa-heart pulse"></i> &middot; All rights reserved.</h1>
 
 </section>
 <!-- footer section ends -->

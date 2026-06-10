@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+    // auto-updating copyright year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     $('#menu').click(function(){
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -66,7 +70,7 @@ document.addEventListener('visibilitychange',
 function(){
     if(document.visibilityState === "visible"){
         document.title = "Experience | Portfolio Bikash Chhetri";
-        $("#favicon").attr("href","/assets/images/favicon.png");
+        $("#favicon").attr("href","/assets/images/favicons.png");
     }
     else {
         document.title = "Come Back To Portfolio";
