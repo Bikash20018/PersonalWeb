@@ -14,180 +14,195 @@
     <link id='favicon' rel="shortcut icon" href="/assets/images/favicons.png" type="image/x-png">
     <title>Résumé · Bikash Chhetri</title>
 </head>
-<body>
+<body class="resume-page">
 
+<!-- compact, sticky action bar -->
 <div class="resume-topbar">
     <a href="/" class="logo">Bikash Chhetri</a>
     <div class="actions">
-        <a href="/" class="btn"><i class="fas fa-arrow-left"></i> Back to site</a>
-        <button type="button" class="btn btn--primary" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+        <a href="/" class="rt-btn rt-btn--ghost"><i class="fas fa-arrow-left"></i><span class="rt-label">Back to site</span></a>
+        <button type="button" class="rt-btn rt-btn--primary" onclick="window.print()"><i class="fas fa-download"></i><span>Download PDF</span></button>
     </div>
 </div>
 
-<main class="resume">
+<main class="resume" id="resume">
 
-    <div class="resume__header">
-        <div>
-            <p class="eyebrow">Résumé</p>
-            <h1>Bikash Chhetri</h1>
-            <p class="resume__role">Full-Stack (MERN) &amp; Android Developer</p>
+    <!-- ===== header ===== -->
+    <div class="rz-hero">
+        <div class="rz-hero__photo">
+            <img src="/assets/images/profile3.JPG" alt="Portrait of Bikash Chhetri" />
+            <span class="rz-hero__status" title="Open to work"></span>
         </div>
-        <ul class="resume__contacts">
-            <li><a href="mailto:chhetri@bikash20.com.np"><i class="fas fa-envelope"></i> chhetri@bikash20.com.np</a></li>
-            <li><a href="tel:+9779847088027"><i class="fas fa-phone-alt"></i> +977 9847088027</a></li>
-            <li><span><i class="fas fa-map-marker-alt"></i> Kanchan-04, Rudrapur, Rupandehi</span></li>
-            <li><a href="https://github.com/Bikash20018" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/Bikash20018</a></li>
-            <li><a href="https://www.linkedin.com/in/bikashchhetri2020/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> in/bikashchhetri2020</a></li>
-            <li><a href="https://bikash20.com.np" target="_blank" rel="noopener"><i class="fas fa-globe"></i> bikash20.com.np</a></li>
-        </ul>
+        <div class="rz-hero__intro">
+            <p class="eyebrow"><span class="dot"></span> Open to work · Remote &amp; on-site</p>
+            <h1>Bikash Chhetri</h1>
+            <p class="rz-hero__role">Full-Stack <span>(MERN)</span> &amp; Android Developer</p>
+        </div>
     </div>
 
-    <p class="resume__summary">
+    <p class="rz-summary">
         Full-Stack (MERN) and Android developer based in Rupandehi, Nepal. I design and build fast,
         thoughtful products end-to-end — from React front-ends to Node/Express APIs and native Android
-        apps — and I sharpen my craft by rebuilding real products as full-stack clones. Comfortable across
-        the stack, the cloud and the command line, and always learning.
+        apps — and I sharpen my craft by rebuilding real products as full-stack clones. Comfortable
+        across the stack, the cloud and the command line, and always learning.
     </p>
 
-    <div class="resume__grid">
-        <div class="resume__main">
+    <!-- ===== contact chips ===== -->
+    <ul class="rz-contacts">
+        <li><a href="mailto:chhetri@bikash20.com.np"><i class="fas fa-envelope"></i> chhetri@bikash20.com.np</a></li>
+        <li><a href="tel:+9779847088027"><i class="fas fa-phone-alt"></i> +977 9847088027</a></li>
+        <li><span><i class="fas fa-map-marker-alt"></i> Kanchan-04, Rudrapur, Rupandehi</span></li>
+        <li><a href="https://github.com/Bikash20018" target="_blank" rel="noopener"><i class="fab fa-github"></i> Bikash20018</a></li>
+        <li><a href="https://www.linkedin.com/in/bikashchhetri2020/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> bikashchhetri2020</a></li>
+        <li><a href="https://bikash20.com.np" target="_blank" rel="noopener"><i class="fas fa-globe"></i> bikash20.com.np</a></li>
+    </ul>
 
-            <section>
-                <h2 class="r-head">Experience</h2>
+    <!-- ===== body ===== -->
+    <div class="rz-grid">
 
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Full-Stack Developer</h3>
-                        <span class="r-date">2020 — Present</span>
-                    </div>
-                    <p class="r-org">Self-employed · Freelance</p>
-                    <p>Build web apps and websites with the MERN stack and ship Android apps. Recreate
-                       full-stack clones of production apps to master architecture, state management and APIs.</p>
+        <div class="rz-main">
+
+            <section class="rz-section">
+                <h2 class="rz-head"><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="rz-timeline">
+
+                    <article class="rz-entry">
+                        <div class="rz-entry__top">
+                            <h3>Full-Stack Developer</h3>
+                            <span class="rz-date">2020 — Present</span>
+                        </div>
+                        <p class="rz-org">Self-employed · Freelance</p>
+                        <p class="rz-desc">Build web apps and websites with the MERN stack and ship Android apps.
+                           Recreate full-stack clones of production apps to master architecture, state management and APIs.</p>
+                    </article>
+
+                    <article class="rz-entry">
+                        <div class="rz-entry__top">
+                            <h3>Android App Developer</h3>
+                            <span class="rz-date">2025 — 2026</span>
+                        </div>
+                        <p class="rz-org">Digital HSS</p>
+                        <p class="rz-desc">Designed and developed an Android application from the ground up,
+                           taking it through build, testing and release.</p>
+                    </article>
+
+                    <article class="rz-entry">
+                        <div class="rz-entry__top">
+                            <h3>Web Developer · Internship</h3>
+                            <span class="rz-date">Jun — Dec 2019</span>
+                        </div>
+                        <p class="rz-org">Mapstreak Flyseas</p>
+                        <p class="rz-desc">Built and maintained responsive web interfaces and contributed to front-end features.</p>
+                    </article>
+
+                    <article class="rz-entry">
+                        <div class="rz-entry__top">
+                            <h3>Website Developer · Internship</h3>
+                            <span class="rz-date">May — Jun 2019</span>
+                        </div>
+                        <p class="rz-org">The Spark</p>
+                        <p class="rz-desc">Developed website pages and components, focusing on clean, accessible markup.</p>
+                    </article>
+
+                    <article class="rz-entry">
+                        <div class="rz-entry__top">
+                            <h3>Mobile Application Developer · Internship</h3>
+                            <span class="rz-date">Apr — May 2018</span>
+                        </div>
+                        <p class="rz-org">The Sunrise Institute</p>
+                        <p class="rz-desc">Worked on Android application features and UI during a hands-on mobile internship.</p>
+                    </article>
+
                 </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Android App Developer</h3>
-                        <span class="r-date">2025 — 2026</span>
-                    </div>
-                    <p class="r-org">Digital HSS</p>
-                    <p>Designed and developed an Android application from the ground up, taking it through
-                       build, testing and release.</p>
-                </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Web Developer · Internship</h3>
-                        <span class="r-date">Jun — Dec 2019</span>
-                    </div>
-                    <p class="r-org">Mapstreak Flyseas</p>
-                    <p>Built and maintained responsive web interfaces and contributed to front-end features.</p>
-                </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Website Developer · Internship</h3>
-                        <span class="r-date">May — Jun 2019</span>
-                    </div>
-                    <p class="r-org">The Spark</p>
-                    <p>Developed website pages and components, focusing on clean, accessible markup.</p>
-                </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Mobile Application Developer · Internship</h3>
-                        <span class="r-date">Apr — May 2018</span>
-                    </div>
-                    <p class="r-org">The Sunrise Institute</p>
-                    <p>Worked on Android application features and UI during a hands-on mobile internship.</p>
-                </div>
-
             </section>
 
-            <section>
-                <h2 class="r-head">Education</h2>
+            <section class="rz-section">
+                <h2 class="rz-head"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="rz-edu">
 
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>Master in Business Studies · Marketing</h3>
-                        <span class="r-date">2021 — 2025</span>
-                    </div>
-                    <p class="r-org">Siddhartha Campus, Kapilvastu · Tribhuvan University</p>
+                    <article class="rz-entry rz-entry--flat">
+                        <div class="rz-entry__top">
+                            <h3>Master in Business Studies · Marketing</h3>
+                            <span class="rz-date">2021 — 2025</span>
+                        </div>
+                        <p class="rz-org">Siddhartha Campus, Kapilvastu · Tribhuvan University</p>
+                    </article>
+
+                    <article class="rz-entry rz-entry--flat">
+                        <div class="rz-entry__top">
+                            <h3>B.Tech, Computer Science &amp; Engineering</h3>
+                            <span class="rz-date">2015 — 2019</span>
+                        </div>
+                        <p class="rz-org">ABSS Institute of Technology, Meerut · Dr. A.P.J. Abdul Kalam Technical University</p>
+                    </article>
+
+                    <article class="rz-entry rz-entry--flat">
+                        <div class="rz-entry__top">
+                            <h3>+2 Science · Optional Math</h3>
+                            <span class="rz-date">2013 — 2015</span>
+                        </div>
+                        <p class="rz-org">Oxford College, Butwal · HSEB</p>
+                    </article>
+
                 </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>B.Tech, Computer Science &amp; Engineering</h3>
-                        <span class="r-date">2015 — 2019</span>
-                    </div>
-                    <p class="r-org">ABSS Institute of Technology, Meerut · Dr. A.P.J. Abdul Kalam Technical University</p>
-                </div>
-
-                <div class="r-item">
-                    <div class="r-top">
-                        <h3>+2 Science · Optional Math</h3>
-                        <span class="r-date">2013 — 2015</span>
-                    </div>
-                    <p class="r-org">Oxford College, Butwal · HSEB</p>
-                </div>
-
             </section>
 
         </div>
 
-        <aside class="resume__side">
+        <aside class="rz-side">
 
-            <section>
-                <h2 class="r-head">Skills</h2>
-                <div class="r-skillgroup">
+            <section class="rz-card">
+                <h2 class="rz-head"><i class="fas fa-layer-group"></i> Skills</h2>
+
+                <div class="rz-skill">
                     <h4>Frontend</h4>
-                    <div class="r-chips">
+                    <div class="rz-chips">
                         <span>React</span><span>Redux</span><span>JavaScript</span><span>HTML5</span>
                         <span>CSS3</span><span>Tailwind</span><span>Bootstrap</span><span>Sass</span>
                         <span>MaterialUI</span><span>ChakraUI</span>
                     </div>
                 </div>
-                <div class="r-skillgroup">
+                <div class="rz-skill">
                     <h4>Backend</h4>
-                    <div class="r-chips">
+                    <div class="rz-chips">
                         <span>Node.js</span><span>Express</span><span>PHP</span><span>Python</span><span>Java</span>
                     </div>
                 </div>
-                <div class="r-skillgroup">
+                <div class="rz-skill">
                     <h4>Mobile</h4>
-                    <div class="r-chips">
+                    <div class="rz-chips">
                         <span>Android</span><span>Kotlin</span><span>Java</span>
                     </div>
                 </div>
-                <div class="r-skillgroup">
+                <div class="rz-skill">
                     <h4>Databases</h4>
-                    <div class="r-chips">
+                    <div class="rz-chips">
                         <span>MongoDB</span><span>MySQL</span><span>PostgreSQL</span>
                     </div>
                 </div>
-                <div class="r-skillgroup">
+                <div class="rz-skill">
                     <h4>Cloud &amp; Tools</h4>
-                    <div class="r-chips">
+                    <div class="rz-chips">
                         <span>AWS</span><span>Firebase</span><span>Heroku</span><span>Netlify</span>
                         <span>DigitalOcean</span><span>Git</span><span>GitHub</span><span>WordPress</span>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <h2 class="r-head">Open Source</h2>
-                <ul class="r-list">
+            <section class="rz-card">
+                <h2 class="rz-head"><i class="fas fa-code-branch"></i> Open Source</h2>
+                <ul class="rz-deflist">
                     <li><b>DevIncept — DCP 2020</b><span>Top Contributor · Open-source program</span></li>
                     <li><b>LetsGrowMore SoC '21</b><span>Participant · Summer of Code</span></li>
                     <li><b>Hacktoberfest 2020</b><span>Contributor</span></li>
                 </ul>
             </section>
 
-            <section>
-                <h2 class="r-head">Details</h2>
-                <ul class="r-list">
+            <section class="rz-card">
+                <h2 class="rz-head"><i class="fas fa-id-card"></i> Details</h2>
+                <ul class="rz-deflist">
                     <li><b>Location</b><span>Rupandehi, Nepal</span></li>
-                    <li><b>Languages</b><span>English, Nepali, Hindi</span></li>
+                    <li><b>Languages</b><span>English · Nepali · Hindi</span></li>
                     <li><b>Open to</b><span>Full-time · Freelance · Remote</span></li>
                 </ul>
             </section>
@@ -196,10 +211,6 @@
     </div>
 
 </main>
-
-<script>
-    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
-</script>
 
 </body>
 </html>
