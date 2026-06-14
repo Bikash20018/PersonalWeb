@@ -1,215 +1,193 @@
+/* =====================================================================
+   Bikash Chhetri — portfolio interactions
+   ===================================================================== */
+
 $(document).ready(function () {
 
-    // auto-updating copyright year
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  /* auto-updating copyright year */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  /* mobile menu toggle */
+  $('#menu').click(function () {
+    $(this).toggleClass('fa-times');
+    $('.navbar').toggleClass('nav-toggle');
+  });
+
+  /* header state, scroll-top button, progress bar & scroll-spy */
+  $(window).on('scroll load', function () {
+    $('#menu').removeClass('fa-times');
+    $('.navbar').removeClass('nav-toggle');
+
+    const scrolled = window.scrollY > 60;
+    document.querySelector('#scroll-top')?.classList.toggle('active', scrolled);
+    document.querySelector('header')?.classList.toggle('scrolled', scrolled);
+
+    /* scroll progress indicator */
+    const progress = document.getElementById('scroll-progress');
+    if (progress) {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progress.style.width = pct + '%';
+    }
+
+    /* scroll spy — highlight the active nav link */
+    $('section').each(function () {
+      const height = $(this).height();
+      const offset = $(this).offset().top - 220;
+      const top = $(window).scrollTop();
+      const id = $(this).attr('id');
+      if (id && top > offset && top < offset + height) {
+        $('.navbar ul li a').removeClass('active');
+        $('.navbar').find(`[href="#${id}"]`).addClass('active');
+      }
     });
+  });
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+  /* smooth scrolling with offset for the fixed header */
+  $('a[href^="#"]').on('click', function (e) {
+    const hash = $(this).attr('href');
+    if (hash === '#' || $(hash).length === 0) return;
+    e.preventDefault();
+    const headerHeight = $('header').outerHeight() || 0;
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top - headerHeight + 2,
+    }, 700, 'swing');
+  });
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-            document.querySelector('header').classList.add('scrolled');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
-            document.querySelector('header').classList.remove('scrolled');
-        }
-
-        // scroll progress indicator
-        const progress = document.getElementById('scroll-progress');
-        if (progress) {
-            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-            const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-            progress.style.width = pct + '%';
-        }
-
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
-        });
-    });
-
-    // smooth scrolling (offset for the fixed header so headings aren't hidden under it)
-    $('a[href^="#"]').on('click', function (e) {
-        const hash = $(this).attr('href');
-        if (hash === '#' || $(hash).length === 0) return;
-        e.preventDefault();
-        const headerHeight = $('header').outerHeight() || 0;
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top - headerHeight + 2,
-        }, 700, 'swing');
-    });
-
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
-        event.preventDefault();
-    });
-    // <!-- emailjs to mail contact form data -->
+  /* contact form -> EmailJS */
+  $('#contact-form').submit(function (event) {
+    event.preventDefault();
+    emailjs.init('user_TTDmetQLYgWCLzHTDgqxm');
+    emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        document.getElementById('contact-form').reset();
+        alert('Message sent successfully. Thank you!');
+      }, function (error) {
+        console.log('FAILED...', error);
+        alert('Something went wrong — please try again.');
+      });
+  });
 
 });
 
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Bikash Chhetri";
-            $("#favicon").attr("href", "assets/images/favicons.png");
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/favhand.png");
-        }
-    });
-
-
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "android development", "web development"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
+/* swap title/favicon when the tab loses focus */
+document.addEventListener('visibilitychange', function () {
+  if (document.visibilityState === 'visible') {
+    document.title = 'Bikash Chhetri · Full-Stack & Android Developer';
+    $('#favicon').attr('href', 'assets/images/favicons.png');
+  } else {
+    document.title = 'Come back to the portfolio!';
+    $('#favicon').attr('href', 'assets/images/favhand.png');
+  }
 });
-// <!-- typed js effect ends -->
 
-async function fetchData() {
-    const response = await fetch("skills.json");
-    const data = await response.json();
-    return data;
+/* typed.js hero effect */
+new Typed('.typing-text', {
+  strings: ['front-end development', 'back-end development', 'web design', 'Android development', 'full-stack apps'],
+  loop: true,
+  typeSpeed: 55,
+  backSpeed: 28,
+  backDelay: 1200,
+});
+
+/* skills — loaded from skills.json */
+async function fetchSkills() {
+  const response = await fetch('skills.json');
+  return response.json();
 }
 
 function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src="${skill.icon}" alt="${skill.name}" loading="lazy" decoding="async" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
+  const container = document.getElementById('skillsContainer');
+  if (!container) return;
+  container.innerHTML = skills.map(skill => `
+    <li class="skill">
+      <img src="${skill.icon}" alt="${skill.name}" loading="lazy" decoding="async" />
+      <span>${skill.name}</span>
+    </li>`).join('');
+}
+
+fetchSkills().then(showSkills).catch(err => console.error('Could not load skills:', err));
+
+/* featured projects — recent public repos, names copied live from GitHub */
+const GH_USER = 'Bikash20018';
+const featuredEl = document.getElementById('featured-projects');
+
+function ghEsc(s) {
+  return String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+function ghTimeAgo(iso) {
+  const secs = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+  const units = [['year', 31536000], ['month', 2592000], ['week', 604800], ['day', 86400], ['hour', 3600], ['minute', 60]];
+  for (const [name, s] of units) { const v = Math.floor(secs / s); if (v >= 1) return `${v} ${name}${v > 1 ? 's' : ''} ago`; }
+  return 'just now';
+}
+function featuredCard(repo) {
+  const role = ghEsc(repo.description) || (repo.language ? ghEsc(repo.language) + ' repository' : 'Public repository');
+  const meta = `${repo.language ? ghEsc(repo.language) + ' · ' : ''}Updated ${ghTimeAgo(repo.updated_at)}`;
+  return `
+    <div class="container">
+      <div class="content">
+        <div class="tag"><h2><a href="${ghEsc(repo.html_url)}" target="_blank" rel="noopener">${ghEsc(repo.name)}</a></h2></div>
+        <div class="desc">
+          <h3>${role}</h3>
+          <p>${meta}</p>
+        </div>
+      </div>
+    </div>`;
+}
+if (featuredEl) {
+  fetch(`https://api.github.com/users/${GH_USER}/repos?sort=updated&per_page=100`)
+    .then(r => { if (!r.ok) throw new Error('GitHub ' + r.status); return r.json(); })
+    .then(repos => {
+      const list = (Array.isArray(repos) ? repos : [])
+        .filter(r => !r.fork && !r.archived)
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+        .slice(0, 6);
+      featuredEl.innerHTML = list.length
+        ? list.map(featuredCard).join('')
+        : `<p class="repo-loading">No public projects yet — see <a href="https://github.com/${GH_USER}" target="_blank" rel="noopener">GitHub</a>.</p>`;
+    })
+    .catch(err => {
+      console.error('Featured projects: could not load repos —', err);
+      featuredEl.innerHTML = `<p class="repo-loading">Couldn't load projects right now — see <a href="https://github.com/${GH_USER}" target="_blank" rel="noopener">github.com/${GH_USER}</a>.</p>`;
     });
-    skillsContainer.innerHTML = skillHTML;
 }
 
-fetchData().then(data => {
-    showSkills(data);
+/* scroll-reveal entrance animations */
+const sr = ScrollReveal({
+  origin: 'bottom',
+  distance: '40px',
+  duration: 850,
+  easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+  reset: false,
 });
 
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
+/* hero */
+sr.reveal('.hero__intro .eyebrow', { delay: 100 });
+sr.reveal('.hero__title', { delay: 180 });
+sr.reveal('.hero__lead', { delay: 260 });
+sr.reveal('.hero__actions', { delay: 340 });
+sr.reveal('.hero__intro .social-icons', { delay: 420 });
+sr.reveal('.hero__media', { delay: 240, origin: 'right', distance: '60px' });
 
+/* sections */
+sr.reveal('.section-head', { delay: 100 });
+sr.reveal('.about__media', { origin: 'left', distance: '60px' });
+sr.reveal('.about__body .tag, .about__body .bio, .about__facts, .resumebtn', { interval: 90 });
+sr.reveal('.skill', { interval: 50 });
+sr.reveal('.education .box', { interval: 90 });
+sr.reveal('.experience .timeline .container', { interval: 90 });
+sr.reveal('.contact__details, .contact__intro .social-icons, .contact__form', { interval: 100 });
 
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
-// disable developer mode
-document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-    }
-}
-
-// Start of Tawk.to Live Chat
+/* live chat (Tawk.to) */
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 (function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
+  var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/60df10bf7f4b000ac03ab6a8/1f9jlirg6';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
 })();
-// End of Tawk.to Live Chat
-
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
-
-/* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
-
-srtop.reveal('.home .image', { delay: 400 });
-srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
-srtop.reveal('.home .telegram', { interval: 600 });
-srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
-
-/* SCROLL ABOUT */
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-
-
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });

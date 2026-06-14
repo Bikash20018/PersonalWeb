@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Bikash Chhetri" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#02094b" />
+    <meta name="theme-color" content="#fbfaf7" />
     <meta name="keywords" content="Bikash Chhetri, portfolio, Bikash, BikashChhetri, personal portfolio Bikash Chhetri, portfolio design, portfolio website, personal portfolio, full stack developer, MERN developer, android developer Nepal" />
     <meta name="description" content="Bikash Chhetri — Full-Stack (MERN) Web Developer and Android App Developer. Explore my projects, skills, experience and get in touch." />
 
@@ -26,403 +26,322 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
+    <!-- Fonts: Fraunces (display serif) · Inter (sans) · JetBrains Mono (labels) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Premium dark · glass theme (overrides) -->
-    <link rel="stylesheet" href="./assets/css/theme.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
     <link id='favicon' rel="shortcut icon" href="./assets/images/favicons.png" type="image/x-png">
-    <title>Portfolio | Bikash Chhetri</title>
+    <title>Bikash Chhetri · Full-Stack & Android Developer</title>
 </head>
-<body oncontextmenu="return false">
+<body>
 
 <!-- scroll progress indicator -->
 <div id="scroll-progress" aria-hidden="true"></div>
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
-
 <!-- navbar starts -->
 <header>
-        <a href="/" class="logo"><i class=""></i>Bikash Chhetri</a>
+    <a href="/" class="logo">Bikash Chhetri</a>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
+    <nav class="navbar">
+        <ul>
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="/projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        </ul>
+    </nav>
+
+    <a href="/resume" class="btn btn--primary nav-cta">Résumé <i class="fas fa-arrow-right"></i></a>
+    <div id="menu" class="fas fa-bars" aria-label="Open menu" role="button" tabindex="0"></div>
 </header>
 <!-- navbar ends -->
 
 
 <!-- hero section starts -->
 <section class="home" id="home">
-    <div id="particles-js"></div>
+    <div class="hero">
+        <div class="hero__intro">
+            <p class="eyebrow"><span class="dot"></span> Available for work · Rupandehi, Nepal</p>
 
-    <div class="content">
-    <h2>Hi There,<br/> I'm Bikash <span>Chhetri</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/bikashchhetri2020/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/Bikash20018" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="twitter" aria-label="Twitter" href="https://x.com/BChhetri23304" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="telegram" aria-label="Telegram" href="https://t.me/BikashChhetri" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/im_bi_03_04?igsh=MTZzcmg3MXhuejRkNA%3D%3D&utm_source=qr"><i class="fab fa-instagram" target="_blank"></i></a></li>
-          <li><a class="dev" aria-label="Dev" href="https://dev.to/bikash_chhetri_dff8bd4b38" target="_blank"><i class="fab fa-dev"></i></a></li>
-        </ul>
-      </div>
+            <h1 class="hero__title">I build full-stack web &amp; <em>Android</em> products.</h1>
+
+            <p class="hero__lead">
+                Hi, I'm <strong>Bikash Chhetri</strong> — a MERN-stack &amp; Android developer
+                who turns ideas into fast, thoughtful interfaces. Currently into
+                <span class="typing-text"></span>.
+            </p>
+
+            <div class="hero__actions">
+                <a href="#contact" class="btn btn--primary">Get in touch <i class="fas fa-arrow-right"></i></a>
+                <a href="#about" class="btn">About me</a>
+            </div>
+
+            <ul class="social-icons">
+                <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/bikashchhetri2020/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a class="github" aria-label="GitHub" href="https://github.com/Bikash20018" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+                <li><a class="twitter" aria-label="Twitter" href="https://x.com/BChhetri23304" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                <li><a class="telegram" aria-label="Telegram" href="https://t.me/BikashChhetri" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i></a></li>
+                <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/im_bi_03_04?igsh=MTZzcmg3MXhuejRkNA%3D%3D&utm_source=qr" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="dev" aria-label="Dev.to" href="https://dev.to/bikash_chhetri_dff8bd4b38" target="_blank" rel="noopener"><i class="fab fa-dev"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="hero__media">
+            <div class="portrait">
+                <img draggable="false" src="./assets/images/profile3.JPG" alt="Portrait of Bikash Chhetri" />
+            </div>
+            <div class="float-card">
+                <span class="fc-icon"><i class="fas fa-code"></i></span>
+                <div>
+                    <b>MERN &amp; Android</b>
+                    <span>Full-Stack Developer</span>
+                </div>
+            </div>
+        </div>
     </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/heros.png" alt="">
-</div>
 </section>
 <!-- hero section ends -->
 
 
 <!-- about section starts -->
 <section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
+    <div class="wrap about__grid">
+        <div class="about__media">
+            <img draggable="false" src="./assets/images/heros.png" alt="Illustrated avatar of Bikash Chhetri" />
+        </div>
 
-    <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/profile3.JPG" alt="">
-    </div>
-    <div class="content">
-        <h3>I'm Bikash</h3>
-        <span class="tag">Full Stack Developer</span>
-        
-        <p>I am a Full-Stack developer based in Kanchan-04, Rudrapur, Rupandehi. 
-          I am an Computer science and Engineering from ABBS.
-          I am very passionate about improving my coding skills & developing applications & websites.
-          I build WebApps and Websites using MERN Stack.
-          Working for myself to improve my skills.
-          Love to build Full-Stack clones. </p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +977 9847088027</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> chhetri@bikash20.com.np</p>
-              <p><span> place : </span> Kanchan - 04, Rudrapur, Rupandehi</p>
+        <div class="about__body">
+            <div class="section-head">
+                <p class="eyebrow">01 — About</p>
+                <h2 class="heading">A developer who sweats the <span>details</span></h2>
+            </div>
+
+            <span class="tag">Full-Stack Developer</span>
+
+            <p class="bio">
+                I'm a Full-Stack developer based in Kanchan-04, Rudrapur, Rupandehi.
+                I hold a degree in Computer Science &amp; Engineering and I'm passionate about
+                sharpening my craft — building web apps and websites with the MERN stack,
+                shipping Android apps, and recreating full-stack clones to learn how great
+                products are made.
+            </p>
+
+            <ul class="about__facts">
+                <li><i class="fas fa-envelope"></i><span class="k">Email</span><span class="v">chhetri@bikash20.com.np</span></li>
+                <li><i class="fas fa-map-marker-alt"></i><span class="k">Location</span><span class="v">Kanchan-04, Rudrapur, Rupandehi</span></li>
+                <li><i class="fas fa-laptop-code"></i><span class="k">Focus</span><span class="v">MERN · Android · Web Design</span></li>
+            </ul>
+
+            <div class="resumebtn">
+                <a href="/resume" class="btn">
+                    <span>View Résumé</span> <i class="fas fa-chevron-right"></i>
+                </a>
             </div>
         </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1RUR3z1jUa3d4Vb3tWhsu3NfkPOb1g2Bc/view?usp=sharing" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-
-    </div>
     </div>
 </section>
 <!-- about section ends -->
 
+
 <!-- skills section starts -->
 <section class="skills" id="skills">
+    <div class="wrap">
+        <div class="section-head">
+            <p class="eyebrow">02 — Skills</p>
+            <h2 class="heading">Tools I reach for <span>daily</span></h2>
+            <p class="lead">A toolkit spanning the front-end, back-end, mobile and the cloud — the stack I use to take products from idea to ship.</p>
+        </div>
 
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
-
-      </div>
-</div>
+        <ul class="skills-grid" id="skillsContainer"></ul>
+    </div>
 </section>
 <!-- skills section ends -->
 
 
 <!-- education section starts -->
 <section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/tu.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>Master in Business Studies | Marketing </h3>
-      <p>Siddhartha Campus, Kapilvastu | TU</p>
-      <h4>2021-2025 | Completed</h4>
-      </div>
-    </div>
-
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/c.jpg" alt="">
+    <div class="wrap">
+        <div class="section-head">
+            <p class="eyebrow">03 — Education</p>
+            <h1 class="heading">Where I <span>learned</span></h1>
+            <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
         </div>
-        <div class="content">
-        <h3>Bachelor in Computer Science and Engineering</h3>
-        <p>ABSS Institute of Technology, Meerut | Dr. A.P.J. Abdul Kalam Technical University</p>
-        <h4>2015-2019 | Completed</h4>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/tu.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Master in Business Studies · Marketing</h3>
+                    <p>Siddhartha Campus, Kapilvastu · TU</p>
+                    <h4>2021 – 2025 · Completed</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/c.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Bachelor in Computer Science &amp; Engineering</h3>
+                    <p>ABSS Institute of Technology, Meerut · Dr. A.P.J. Abdul Kalam Technical University</p>
+                    <h4>2015 – 2019 · Completed</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/s.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>+2 Science · Optional Math</h3>
+                    <p>Oxford College, Butwal · HSEB</p>
+                    <h4>2013 – 2015 · Completed</h4>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/b.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>10th · Optional Math</h3>
+                    <p>Buddha Deep English Boarding School · Kanchan-05, Rudrapur, Rupandehi</p>
+                    <h4>2003 – 2013 · Completed</h4>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/s.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>+2 Science | Optional Math </h3>
-      <p>Oxford College, Butwal | HSEB</p>
-      <h4>2013-2015 | Completed</h4>
-      </div>
-    </div>
-
-
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" loading="lazy" decoding="async" src="./assets/images/educat/b.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>10th Optional Math</h3>
-        <p>Buddha Deep English boarding school | Kanchan-05, Rudrapur, Rupandehi </p>
-        <h4>2003-2013 | Completed</h4>
-        </div>
-    </div>
-
-
-
-</div>
 </section>
 <!-- education section ends -->
 
 
 <!-- experience section starts -->
 <section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-      <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Mapstreak Flyseas</h2>
+    <div class="wrap">
+        <div class="section-head">
+            <p class="eyebrow">04 — Projects</p>
+            <h2 class="heading">What I've <span>built</span></h2>
+            <p class="lead">A few of my latest builds, with names pulled live from GitHub. Browse every repository on the projects page — or see my full work history.</p>
         </div>
-        <div class="desc">
-            <h3>Web Developer | Internship</h3>
-            <p>June 2019 - Dec 2019</p>
+
+        <div class="timeline" id="featured-projects">
+            <div class="repo-loading"><i class="fas fa-circle-notch fa-spin"></i> Loading projects from GitHub…</div>
         </div>
-      </div>
+
+        <div class="morebtn">
+            <a href="/projects" class="btn btn--primary"><span>Browse all projects</span> <i class="fas fa-arrow-right"></i></a>
+            <a href="/experience" class="btn"><span>Work history</span></a>
+        </div>
     </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>The Spark</h2>
-        </div>
-        <div class="desc">
-            <h3>Website Developer | Internship</h3>
-            <p>May 2019 - June 2019</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>The Sunrise Institute </h2>
-        </div>
-        <div class="desc">
-            <h3>Mobile Application Developer | Internship</h3>
-            <p>April 2018 - May 2018</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Frshr Technologies</h2>
-        </div>
-        <div class="desc">
-            <h3>Wordpress Developer | Internship</h3>
-            <p>April 2017 - April 2017</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>WonderingBlog</h2>
-        </div>
-        <div class="desc">
-            <h3>Search Engine Optimization | Internship</h3>
-            <p>March 2016 - April 2016</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-        <div class="content">
-          <div class="tag">
-            <h2>Hacktoberfest 2020</h2>
-          </div>
-          <div class="desc">
-              <h3>Contributor | Open Source Program</h3>
-              <p>October 2015 - November 2015</p>
-          </div>
-        </div>
-      </div>
-   
-
-  </div>
-
-  <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</div>
-
 </section>
 <!-- experience section ends -->
 
+
 <!-- contact section starts -->
 <section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+    <div class="wrap contact__grid">
+        <div class="contact__intro">
+            <p class="eyebrow">05 — Contact</p>
+            <h2 class="contact__title">Let's build something <em>worth shipping.</em></h2>
+            <p class="contact__lead">Have a project, a role, or just a question? Drop a message and I'll get back to you soon.</p>
 
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" aria-label="Your name" autocomplete="name" required>
-          <i class='fas fa-user'></i>
+            <div class="contact__details">
+                <a href="mailto:chhetri@bikash20.com.np"><i class="fas fa-envelope"></i> chhetri@bikash20.com.np</a>
+                <a href="tel:+9779847088027"><i class="fas fa-phone-alt"></i> +977 9847088027</a>
+                <span><i class="fas fa-map-marker-alt"></i> Kanchan-04, Rudrapur, Rupandehi</span>
+            </div>
+
+            <ul class="social-icons">
+                <li><a aria-label="LinkedIn" href="https://www.linkedin.com/in/bikashchhetri2020/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a aria-label="GitHub" href="https://github.com/Bikash20018" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+                <li><a aria-label="Twitter" href="https://x.com/BChhetri23304" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                <li><a aria-label="Telegram" href="https://t.me/BikashChhetri" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i></a></li>
+            </ul>
         </div>
-        <div class="field">
-          <input type="email" name="email" placeholder="Email" aria-label="Your email address" autocomplete="email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="tel" name="phone" placeholder="Phone" aria-label="Your phone number" autocomplete="tel">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" aria-label="Your message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
-  </div>
+
+        <form id="contact-form" class="contact__form">
+            <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+            </div>
+            <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+                <label for="cf-phone">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+                <input id="cf-phone" type="tel" name="phone" placeholder="+977 ..." autocomplete="tel">
+            </div>
+            <div class="field">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" placeholder="Tell me about your project…" required></textarea>
+            </div>
+            <div class="button-area">
+                <button type="submit">Send message <i class="fas fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </div>
 </section>
 <!-- contact section ends -->
 
 
 <!-- footer section starts -->
-<section class="footer">
+<footer class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Bikash Chhetri</h3>
+            <p>Thanks for stopping by. I'm always open to a good conversation about web, mobile and product. Keep rising 🚀</p>
+            <div class="share">
+                <a href="https://www.linkedin.com/in/bikashchhetri2020" class="fab fa-linkedin-in" aria-label="LinkedIn" target="_blank" rel="noopener"></a>
+                <a href="https://github.com/Bikash20018" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener"></a>
+                <a href="mailto:chhetri@bikash20.com.np" class="fas fa-envelope" aria-label="Mail"></a>
+                <a href="https://x.com/BChhetri23304" class="fab fa-twitter" aria-label="Twitter" target="_blank" rel="noopener"></a>
+                <a href="https://t.me/BikashChhetri" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank" rel="noopener"></a>
+            </div>
+        </div>
 
-  <div class="box-container">
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="/projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-      <div class="box">
-          <h3>Bikash's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
+        <div class="box">
+            <h3>Contact info</h3>
+            <p><i class="fas fa-phone"></i>+977 9847088027</p>
+            <p><i class="fas fa-envelope"></i>chhetri@bikash20.com.np</p>
+            <p><i class="fas fa-map-marked-alt"></i>Kanchan-04, Rudrapur, Rupandehi</p>
+        </div>
+    </div>
 
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+977 9847088027</p>
-          <p> <i class="fas fa-envelope"></i>chhetri@bikash20.com.np</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Kanchan -4, Rudrapur, Rupandehi</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/bikashchhetri2020" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/Bikash20018" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:chhetri@bikash20.com.np" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://x.com/BChhetri23304" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
-              <a href="https://dev.to/bikash_chhetri_dff8bd4b38" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">&copy; <span id="year"></span> Bikash Chhetri &middot; Crafted with <i class="fa fa-heart pulse"></i> &middot; All rights reserved.</h1>
-
-</section>
+    <h1 class="credit">&copy; <span id="year"></span> Bikash Chhetri · Crafted with <i class="fa fa-heart pulse"></i> · All rights reserved.</h1>
+</footer>
 <!-- footer section ends -->
 
 
 <!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
+<a href="#home" aria-label="Scroll to top" class="fas fa-angle-up" id="scroll-top"></a>
 
 
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
+<!-- ==== JAVASCRIPT ==== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
 <script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script src="./assets/js/script.js"></script>
 
